@@ -107,6 +107,47 @@ hr.divider {
   align-self: center;
 }
 
+.loading-wrap {
+  align-items: center;
+  justify-content: center;
+}
+.loading-wrap .loading {
+  margin-right: 5px;
+}
+
+.loading {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+.loading div {
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid var(--green);
+  border-color: var(--green) transparent transparent transparent;
+  animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+.loading div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.loading div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loading div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media (min-width: 1200px) {
   body > main {
     min-height: calc(100vh - 341px);
@@ -949,6 +990,1153 @@ header.page-title hr {
   }
   #footer .columns ul li a:hover {
     color: var(--white);
+  }
+}
+#home {
+  flex-direction: column;
+  margin-top: -80px;
+}
+#home header {
+  width: 100%;
+  min-width: 320px;
+  min-height: 675px;
+  height: 100vh;
+  background-image: url("../images/ferrari-vermelha-1200.webp");
+  background-size: cover;
+  background-position-x: 80%;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 2em;
+}
+#home header h1 {
+  font-size: 4em;
+  color: var(--white);
+  font-weight: bold;
+  text-align: right;
+  margin: 0.4em 0;
+  line-height: 1.25em;
+}
+#home header a {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  border: var(--white) 2px solid;
+  border-radius: 8px;
+  color: var(--white);
+}
+#home header a:hover {
+  background-color: var(--black-10);
+}
+#home header a:active {
+  background-color: var(--black-75);
+}
+#home header a:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+#home .gallery {
+  min-width: 320px;
+  flex-direction: column;
+}
+#home .gallery figure {
+  width: 100%;
+  margin: 0 1px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+#home .gallery figure img {
+  width: 100%;
+}
+#home .gallery figure figcaption {
+  position: absolute;
+  left: 0;
+  bottom: var(--space);
+  background-color: var(--black-75);
+  color: var(--white);
+  padding: 0.3em 1em;
+  transition-duration: 0.5s;
+}
+#home .gallery figure figcaption h2 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#home .gallery figure figcaption p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--gray-3);
+}
+#home .gallery figure:hover figcaption {
+  bottom: var(--space);
+}
+
+@media (min-width: 576px) {
+  #home .gallery {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1200px) {
+  #home {
+    margin-top: -100px;
+  }
+  #home .gallery figure figcaption {
+    bottom: calc(var(--space) * -3);
+  }
+  #home hr {
+    top: 100px;
+  }
+  #home header {
+    height: 100vh;
+    max-height: initial;
+    background-image: url("../images/ferrari-vermelha.webp");
+  }
+}
+@media (min-width: 1920px) {
+  #home header {
+    background-image: url("../images/ferrari-vermelha@2x.webp");
+  }
+}
+#service {
+  margin-top: var(--space);
+  flex-direction: column;
+}
+#service h2 {
+  padding: 0 15px;
+  margin: 0;
+  font-size: 27px;
+  font-weight: bold;
+  color: var(--dark-0);
+  text-transform: uppercase;
+}
+#service h2 small {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gray-2);
+}
+#service > img {
+  width: 100%;
+  margin: 30px 0;
+}
+#service > div {
+  flex-direction: column;
+}
+#service > div a {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+  margin: 0 var(--space);
+}
+#service > div a:hover {
+  background-color: var(--black-10);
+}
+#service > div a:active {
+  background-color: var(--black-75);
+}
+#service > div a:hover {
+  background-color: var(--green-hover);
+}
+#service > div a:active {
+  background-color: var(--green-active);
+}
+#service > div .icons {
+  flex-direction: column;
+}
+#service > div .icons figure {
+  margin-top: 30px;
+  flex-direction: column;
+  align-items: center;
+}
+#service > div .icons figure img {
+  width: 100px;
+}
+#service > div .icons figure figcaption {
+  margin: 30px auto;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--gray-0);
+}
+
+@media (min-width: 768px) {
+  #service > div {
+    flex-direction: column-reverse;
+  }
+  #service > div .icons {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  #service > div .icons figure {
+    margin: 100px 0;
+  }
+  #service > div .icons figure img {
+    width: 150px;
+  }
+  #service > div a {
+    width: 200px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 992px) {
+  #service h2 {
+    font-size: 60px;
+  }
+  #service h2 small {
+    font-size: 35px;
+  }
+}
+#contact {
+  flex-direction: column;
+}
+#contact p {
+  font-size: 15px;
+  color: var(--gray-1);
+  font-weight: 600;
+}
+#contact h2 {
+  padding: 0 var(--space);
+  margin: 0;
+  font-size: 27px;
+  font-weight: bold;
+  color: var(--dark-0);
+  text-transform: uppercase;
+}
+#contact > section {
+  flex-direction: column;
+}
+#contact #map {
+  background-image: url("../images/mapa.png");
+  height: 263px;
+  width: 100%;
+  margin-top: var(--space);
+}
+#contact .contacts {
+  margin: var(--space) 0 0 0;
+  padding: 1em;
+  flex-direction: column;
+}
+#contact .contacts li {
+  border: var(--gray-3) 1px solid;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+  margin-bottom: 4em;
+  text-align: center;
+  color: var(--gray-1);
+}
+#contact .contacts li img {
+  max-width: 100px;
+  background-color: var(--white);
+  margin: 0 auto;
+  margin-top: -60px;
+  padding: 0 15px;
+}
+#contact .contacts li .title {
+  font-weight: 600;
+  margin: 0;
+  font-size: 24px;
+}
+#contact .contacts li p {
+  font-weight: 300;
+  margin: 0;
+  font-size: 25px;
+}
+
+@media (min-width: 992px) {
+  #contact h2 {
+    font-size: calc(var(--space) * 3);
+  }
+  #contact > section {
+    flex-direction: row;
+  }
+  #contact > section form, #contact > section #map {
+    flex: 1;
+  }
+  #contact > section form {
+    max-width: unset;
+  }
+  #contact > section #map {
+    margin-left: 0;
+    height: 570px;
+  }
+  #contact .contacts {
+    flex-direction: row;
+  }
+  #contact .contacts li {
+    margin-right: 1em;
+    margin-bottom: 2em;
+  }
+  #contact .contacts li:last-child {
+    margin-right: unset;
+  }
+  #contact textarea {
+    height: 245px;
+  }
+}
+#change-photo form {
+  align-items: center;
+  display: flex;
+}
+#change-photo form img {
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+}
+#change-photo form #file {
+  display: none;
+}
+#change-photo form .choose-photo {
+  margin: var(--space) 0;
+  width: 256px;
+}
+#change-photo form.cropping img {
+  height: auto;
+  border-radius: 0;
+  margin-top: 0;
+}
+
+#change-password form .page-title {
+  margin: unset;
+}
+
+#schedules {
+  padding-bottom: var(--space);
+}
+#schedules footer.fixed {
+  justify-content: center;
+}
+#schedules footer.fixed a.black {
+  min-width: 250px;
+}
+#schedules ul {
+  margin: 0;
+  padding: 0 var(--space);
+  flex-direction: column;
+}
+#schedules ul li {
+  flex-direction: column;
+}
+#schedules ul li > section {
+  flex-wrap: wrap;
+}
+#schedules ul li > section > div {
+  width: 50%;
+  flex-direction: column;
+}
+#schedules ul li > section > div label, #schedules ul li > section > div span {
+  font-size: 16px;
+  margin: calc(var(--space) / 2) 0;
+  color: var(--dark-0);
+}
+#schedules ul li > section > div label {
+  font-weight: bold;
+}
+#schedules ul li button {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--red);
+  color: var(--white);
+  max-width: 150px;
+  align-self: center;
+}
+#schedules ul li button:hover {
+  background-color: var(--black-10);
+}
+#schedules ul li button:active {
+  background-color: var(--black-75);
+}
+#schedules ul li button:hover {
+  background-color: var(--red-hover);
+}
+#schedules ul li button:active {
+  background-color: var(--red-active);
+}
+#schedules ul li + li {
+  border-top: var(--gray-10) 1px solid;
+  margin-top: calc(var(--space) / 2);
+  padding-top: calc(var(--space) / 2);
+}
+
+@media (min-width: 992px) {
+  #schedules footer.fixed {
+    justify-content: flex-start;
+  }
+  #schedules ul li {
+    flex-direction: row;
+    justify-content: space-between;
+    width: fit-content;
+  }
+  #schedules ul li > section {
+    flex-wrap: nowrap;
+    flex: 1;
+    max-width: 1000px;
+  }
+  #schedules ul li > section > div {
+    width: unset;
+    min-width: 200px;
+  }
+  #schedules ul li > section > div label {
+    display: none;
+  }
+  #schedules ul li > section > div.service {
+    flex: 1;
+  }
+  #schedules ul li button {
+    align-self: flex-end;
+  }
+  #schedules ul li:first-child > section > div label {
+    display: flex;
+  }
+}
+#time-options h3 {
+  margin: 0 0 var(--space) 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#time-options .options {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#time-options .options label {
+  width: calc(50% - calc(var(--space) / 2));
+  margin-bottom: var(--space);
+}
+#time-options .options label span {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  display: flex;
+  width: 100%;
+  background-color: var(--gray-10);
+  color: var(--dark-0);
+}
+#time-options .options label span:hover {
+  background-color: var(--black-10);
+}
+#time-options .options label span:active {
+  background-color: var(--black-75);
+}
+#time-options .options label input {
+  display: none;
+}
+#time-options .options label input:checked + span {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+@media (min-width: 992px) {
+  #time-options.page form {
+    min-width: 900px;
+  }
+  #time-options .options {
+    justify-content: flex-start;
+  }
+  #time-options .options label {
+    width: calc(25% - var(--space));
+    margin-right: var(--space);
+  }
+  #time-options h3 {
+    font-size: 22px;
+  }
+}
+#schedules-services .options {
+  margin-top: var(--space);
+  flex-direction: column;
+}
+#schedules-services .options label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: var(--space);
+}
+#schedules-services .options label .square {
+  width: 24px;
+  height: 24px;
+  border: var(--gray-10) 2px solid;
+  justify-content: center;
+  align-items: center;
+}
+#schedules-services .options label .square > div {
+  width: 14px;
+  height: 14px;
+  background-color: var(--gray);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#schedules-services .options label:hover .square {
+  border: var(--gray-8) 2px solid;
+}
+#schedules-services .options label:hover .square > div {
+  opacity: 0.2;
+}
+#schedules-services .options label input {
+  display: none;
+}
+#schedules-services .options label input:checked + .square > div {
+  opacity: 1;
+  background-color: var(--blue);
+}
+#schedules-services .options label .content {
+  flex-direction: column;
+  padding-left: 10px;
+  font-size: 16px;
+  color: var(--dark-0);
+  line-height: 24px;
+}
+#schedules-services .options label .content .description {
+  font-size: 14px;
+  color: var(--gray-2);
+}
+#schedules-services .options label .content .price {
+  font-weight: bold;
+}
+#schedules-services aside {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  bottom: 80px;
+  height: 50px;
+  background-color: var(--gray-12);
+  border-bottom: var(--gray-3) 1px solid;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+#schedules-services aside header {
+  font-size: 32px;
+  color: var(--dark-0);
+  height: 130px;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+#schedules-services aside section {
+  padding: 0 var(--space);
+  display: none;
+  flex: 1;
+  max-height: calc(100vh - 339px);
+  overflow: auto;
+}
+#schedules-services aside section table {
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: var(--gray-3) 1px solid;
+}
+#schedules-services aside section table .price {
+  text-align: right;
+}
+#schedules-services aside section table td {
+  padding: var(--space) 0;
+  border-top: var(--gray-3) 1px solid;
+}
+#schedules-services aside footer {
+  height: 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space);
+  font-size: 18px;
+  color: var(--dark-0);
+}
+#schedules-services aside footer .total {
+  font-weight: bold;
+  margin-left: var(--space);
+  text-align: right;
+}
+#schedules-services aside footer button {
+  min-width: 50px;
+  width: 50px;
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+}
+#schedules-services aside footer button:hover {
+  background-color: var(--black-10);
+}
+#schedules-services aside footer button:active {
+  background-color: var(--black-75);
+}
+#schedules-services aside footer button svg {
+  transform: rotate(0deg);
+  transition: all 0.2s ease-in-out;
+}
+#schedules-services aside.open {
+  height: calc(100vh - 158px);
+}
+#schedules-services aside.open header, #schedules-services aside.open section {
+  display: flex;
+}
+#schedules-services aside.open footer button svg {
+  transform: rotate(180deg);
+}
+
+@media (min-width: 1200px) {
+  #schedules-services > header, #schedules-services > main {
+    width: calc(100% - 358px);
+  }
+  #schedules-services aside, #schedules-services aside.open {
+    width: 375px;
+    height: calc(100vh - 118px);
+    bottom: 0;
+    z-index: 4;
+  }
+  #schedules-services aside header, #schedules-services aside section, #schedules-services aside.open header, #schedules-services aside.open section {
+    display: flex;
+  }
+  #schedules-services aside header, #schedules-services aside.open header {
+    height: 160px;
+  }
+  #schedules-services aside footer, #schedules-services aside.open footer {
+    height: 80px;
+  }
+  #schedules-services aside footer > div, #schedules-services aside.open footer > div {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+  }
+  #schedules-services aside footer > div .total, #schedules-services aside.open footer > div .total {
+    font-size: 29px;
+  }
+  #schedules-services aside footer button, #schedules-services aside.open footer button {
+    display: none;
+  }
+}
+#auth {
+  min-width: 300px;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+#auth .hide {
+  display: none;
+}
+#auth > section {
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#auth > section a {
+  display: contents;
+}
+#auth > section a img {
+  position: absolute;
+  width: 100px;
+  top: 40px;
+  z-index: 1;
+}
+#auth > section p {
+  color: var(--gray-9);
+  font-size: 16px;
+}
+#auth > section form {
+  margin-top: 170px;
+  position: relative;
+  left: 0;
+  width: 100vw;
+}
+#auth > section form .message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#auth > section form .message img {
+  margin-right: 5px;
+}
+#auth > section form .message span {
+  font-weight: 600;
+  color: var(--dark-0);
+}
+#auth > section form h1 {
+  text-align: center;
+  color: var(--green);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 10px auto;
+}
+#auth > section form hr {
+  border: none;
+  border-top: 4px solid var(--red);
+  width: 68px;
+  margin-bottom: 30px;
+}
+#auth > section form .field {
+  width: 100%;
+}
+#auth > section form .actions {
+  justify-content: space-between;
+}
+#auth > section form .actions > div {
+  flex-direction: column;
+}
+#auth > section form .actions > div a {
+  display: flex;
+}
+#auth > section form .actions .link {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--dark-0);
+  text-decoration: none;
+}
+#auth > section form .actions .link + .link {
+  margin-top: 10px;
+}
+#auth > section form .actions .link:hover {
+  color: var(--gray-11);
+}
+#auth > section form .actions .link:active {
+  color: var(--black);
+}
+#auth > section form.forget .actions {
+  justify-content: flex-end;
+}
+
+@media (min-width: 500px) {
+  #auth {
+    height: initial;
+    min-height: 100vh;
+  }
+  #auth > section {
+    width: 500px;
+    height: initial;
+  }
+  #auth > section a img {
+    top: 25px;
+  }
+  #auth > section form {
+    border: var(--gray-8) 1px solid;
+    border-radius: 10px;
+    width: 100%;
+    padding: 50px;
+    padding-top: 100px;
+    margin-top: 100px;
+  }
+}
+#schedules-payment {
+  position: relative;
+}
+#schedules-payment.keyboard-open {
+  margin-bottom: 0;
+  height: calc(100vh - 60px);
+}
+#schedules-payment.keyboard-open > main form {
+  max-width: 100%;
+}
+#schedules-payment.keyboard-open footer {
+  position: static;
+  width: 100vw;
+  margin-left: calc(var(--space) * -1);
+}
+#schedules-payment .name {
+  text-transform: uppercase;
+}
+#schedules-payment .nametspan {
+  text-transform: capitalize;
+}
+#schedules-payment > header {
+  height: 260px;
+  min-height: 260px;
+  position: relative;
+}
+#schedules-payment > header h1 > {
+  display: none;
+}
+#schedules-payment > main {
+  align-items: center;
+}
+#schedules-payment > main form {
+  max-width: 100%;
+}
+#schedules-payment > main form .form-creditcard {
+  margin-top: var(--space);
+}
+#schedules-payment > main form .form-creditcard .form-fields {
+  flex-direction: column;
+  width: 100%;
+}
+#schedules-payment > main form .form-creditcard .form-fields .fields {
+  flex-direction: row;
+  justify-content: space-between;
+}
+#schedules-payment > main form .form-creditcard .form-fields .fields .field {
+  width: calc(50% - (calc(var(--space) / 2)));
+}
+#schedules-payment > main form .form-creditcard .form-card {
+  perspective: 1000px;
+  position: absolute;
+  top: 32px;
+  width: 100%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+#schedules-payment > main form .form-creditcard .form-card .faces {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  width: 300px;
+}
+#schedules-payment > main form .form-creditcard .form-card .faces.flipped {
+  transform: rotateY(180deg);
+}
+#schedules-payment > main form .form-creditcard .form-card .faces svg {
+  width: 300px;
+  backface-visibility: hidden;
+  position: absolute;
+}
+#schedules-payment > main form .form-creditcard .form-card .faces svg.back .name {
+  text-transform: capitalize;
+}
+#schedules-payment > main form .form-creditcard .form-card .faces .back {
+  transform: rotateY(180deg);
+}
+
+@media (min-width: 992px) {
+  #schedules-payment {
+    position: static;
+  }
+  #schedules-payment.keyboard-open {
+    margin-bottom: 0;
+    height: calc(100vh - 60px);
+  }
+  #schedules-payment.keyboard-open > main form {
+    max-width: 900px;
+  }
+  #schedules-payment.keyboard-open footer {
+    position: fixed;
+    width: 100%;
+    margin-left: initial;
+  }
+  #schedules-payment > header {
+    height: 130px;
+  }
+  #schedules-payment > header h1 {
+    display: block;
+  }
+  #schedules-payment > main {
+    align-items: flex-start;
+  }
+  #schedules-payment > main form {
+    max-width: 900px;
+    justify-content: space-between;
+  }
+  #schedules-payment > main form .form-creditcard .form-card {
+    position: static;
+    display: flex;
+    justify-content: center;
+    padding-left: var(--space);
+  }
+  #schedules-payment > main form .form-creditcard .form-card .faces {
+    width: 100%;
+  }
+  #schedules-payment > main form .form-creditcard .form-card .faces svg {
+    width: 398px;
+    position: absolute;
+  }
+}
+#schedules-address main {
+  margin-top: var(--space);
+}
+#schedules-address main form hr {
+  margin: var(-space) auto;
+  border: none;
+  border-top: var(--gray-3) 1px solid;
+}
+#schedules-address main form .btn-create {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+}
+#schedules-address main form .btn-create:hover {
+  background-color: var(--black-10);
+}
+#schedules-address main form .btn-create:active {
+  background-color: var(--black-75);
+}
+#schedules-address main form .btn-create:hover {
+  background-color: var(--green-hover);
+}
+#schedules-address main form .btn-create:active {
+  background-color: var(--green-active);
+}
+#schedules-address main form .btn-update {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--gray-3);
+  color: var(--gray-0);
+}
+#schedules-address main form .btn-update:hover {
+  background-color: var(--black-10);
+}
+#schedules-address main form .btn-update:active {
+  background-color: var(--black-75);
+}
+#schedules-address main form .btn-update:hover {
+  background-color: var(--gray-hover);
+}
+#schedules-address main form .btn-update:active {
+  background-color: var(--gray-active);
+}
+#schedules-address main form .addresses {
+  flex-direction: column;
+}
+#schedules-address main form .addresses label {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: var(--space);
+}
+#schedules-address main form .addresses label address {
+  font-style: normal;
+  margin-left: calc(var(--space) / 2);
+}
+#schedules-address main form .addresses label .circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: var(--gray-10) 2px solid;
+  justify-content: center;
+  align-items: center;
+}
+#schedules-address main form .addresses label .circle > div {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--gray);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#schedules-address main form .addresses label:hover .circle {
+  border: var(--gray-8) 2px solid;
+}
+#schedules-address main form .addresses label:hover .circle > div {
+  opacity: 0.2;
+}
+#schedules-address main form .addresses label input {
+  display: none;
+}
+#schedules-address main form .addresses label input:checked + .circle > div {
+  opacity: 1;
+  background-color: var(--blue);
+}
+
+#schedules-adress-form header h1 small {
+  display: flex;
+}
+#schedules-adress-form main form #schedule_at {
+  font-size: 20px;
+}
+
+#schedules-complete main p {
+  margin: 0 var(--space);
+  margin-bottom: var(--space);
+  font-size: 22px;
+  color: var(--gray-0);
+}
+#schedules-complete main p small {
+  display: block;
+  font-size: 16px;
+}
+#schedules-complete main footer.fixed {
+  justify-content: center;
+}
+#schedules-complete main footer.fixed a {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+  min-width: 180px;
+}
+#schedules-complete main footer.fixed a:hover {
+  background-color: var(--black-10);
+}
+#schedules-complete main footer.fixed a:active {
+  background-color: var(--black-75);
+}
+#schedules-complete main footer.fixed a:hover {
+  background-color: var(--green-hover);
+}
+#schedules-complete main footer.fixed a:active {
+  background-color: var(--green-active);
+}
+
+@media (min-width: 1200px) {
+  #schedules-complete main footer.fixed {
+    justify-content: flex-start;
+  }
+}
+#error .desktop {
+  display: none;
+}
+#error header {
+  margin: 0;
+  margin-top: var(--space);
+  padding: 0 3em;
+  height: unset;
+}
+#error header h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.5em;
+}
+#error header b {
+  color: var(--red);
+}
+#error p {
+  padding: 0 3em;
+  font-size: 20px;
+  color: var(--gray-0);
+}
+#error img {
+  width: 100%;
+  margin-bottom: 3em;
+}
+#error .columns, #error .column {
+  flex-direction: column;
+}
+
+@media (min-width: 576px) {
+  #error header {
+    height: initial;
+    min-height: initial;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  #error {
+    min-height: calc(100vh - 325px);
+  }
+  #error .desktop {
+    display: flex;
+  }
+  #error .mobile {
+    display: none;
+  }
+  #error p {
+    font-size: 16px;
+  }
+  #error .columns {
+    flex-direction: row;
+    align-items: center;
+  }
+  #error .column {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 396px);
   }
 }
 
